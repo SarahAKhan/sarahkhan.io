@@ -3,13 +3,13 @@
 
 # Uncomment and set the URL of your site (with protocol, e.g. `https://`)
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# url:                   https://username.github.io
+url:                   https://SarahAKhan.github.io
 
 # Uncomment and set the "base URL" of your site.
 # When your site is in a subdirectory, set to `/<name of directory>`,
 # with a leading `/` but no trailing `/`. Use the empty string '' otherwise.
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# baseurl:               '/hydejack-starter-kit'
+baseurl:               https://sarahkhan.io
 
 
 # General settings
@@ -20,16 +20,18 @@
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Starter Kit
+title:                 Sarah Khan
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+  Computer Science graduate student specializing in Computational Perception and Robotics; 
+  documenting insights and explorations in autonomous systems, machine learning, and embedded
+  software development.  This space serves as a portfolio of my academic research, technical
+  projects, community involvement, and in-depth analyses of emerging technologies.
 
 # A shorter description for the sidebar.
-tagline:               Change `tagline` in `_config.yml`
+tagline:               Exploring the Intersection of Robotics and Computer Science.
 
 # A list of keywords for your blog
 keywords:              []
@@ -42,19 +44,21 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <firstname> <lastname>
-  email:               <mail@domain.tld>
+  name:                Sarah Khan
+  email:               skhan72@gmail.com
   # # Used by `jekyll-seo-tag`:
   # twitter:             <username>
 
 # Add links to the sidebar.
 menu:
-  - title:             Example
-    url:               /example/
+  - title:             Blog
+    url:               /blog/
+  - title:             Projects
+    url:               /projects/
+  - title:             Résumé*
+    url:               /resume/
   - title:             Documentation
     url:               /docs/
-  - title:             About
-    url:               /about/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -70,11 +74,11 @@ legal:
 copyright:             © 2024. All rights reserved.
 
 # Format of the permalinks
-permalink:             /:categories/:year-:month-:day-:title/
+permalink:             /blog/:categories/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
-paginate_path:         /:num/
+paginate_path:         /blog/:num/
 
 
 # Theme
@@ -288,7 +292,7 @@ hydejack:
 
 collections:
   featured_categories:
-    permalink:         /:name/
+    permalink:         /blog/:name/
     output:            true
 
   featured_tags:
@@ -304,6 +308,9 @@ collections:
 # ----------------------------------------------------------------------------------------
 
 exclude:
+  - ./#jekyll-theme-hydejack/node_modules
+  - ./#jekyll-theme-hydejack/assets
+  - ./#jekyll-theme-hydejack/.git
   - .jekyll-cache
   - .sass-cache
   - .ruby-lsp
@@ -323,6 +330,7 @@ include:
 # ----------------------------------------------------------------------------------------
 
 plugins:
+  - jekyll-include-cache
   - jekyll-default-layout
   - jekyll-feed
   - jekyll-optional-front-matter
@@ -392,6 +400,7 @@ compress_html:
 
 sass:
   style:               compressed
+
 
 # Jekyll Compose Defaults
 # ---------------------------------------------------------------------------------------

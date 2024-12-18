@@ -8,15 +8,15 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.3"
+#gem "jekyll", "~> 4.3"
 
-gem "jekyll-theme-hydejack", "~> 9.1"
+# gem "jekyll-theme-hydejack", path: "./#jekyll-theme-hydejack"
 
 # If you are part of the ["Customers" team](https://github.com/orgs/hydecorp/teams/pro-customers), 
 # you can fetch the theme from a private repository. 
 # See [Deploy in the Hydejack Docs](https://hydejack.com/docs/deploy) for details.
 
-# gem "jekyll-theme-hydejack", git: "https://github.com/hydecorp/hydejack-pro", tag: "pro/v9.2.0"
+gem "jekyll-theme-hydejack", git: "https://github.com/hydecorp/hydejack-pro", tag: "pro/v9.2.0"
 
 # IMPORTANT: The followign gem is used to compile math formulas to 
 # KaTeX during site building.
@@ -37,6 +37,8 @@ gem "duktape"
 
 # Required for `jekyll serve` in Ruby 3
 gem "webrick"
+
+gem "github-pages", group: :jekyll_plugins
 
 # Uncomment when using the `--lsi` option for `jekyll build`
 # gem "classifier-reborn"
@@ -59,6 +61,10 @@ group :jekyll_plugins do
   gem "jekyll-compose"
 end
 
-gem 'wdm' if Gem.win_platform?
+# gem 'wdm' if Gem.win_platform?
+platforms :mingw, :x64_mingw, :mswin, :ruby do
+  gem 'wdm', '~> 0.1.1'
+  gem 'tzinfo-data'
+end
 gem "tzinfo-data" if Gem.win_platform?
 
